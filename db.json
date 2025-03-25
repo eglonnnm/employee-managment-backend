@@ -24,6 +24,20 @@
           "address": "Prizren",
           "email": "Amir@makerminds.org",
           "phone": "044645153"
+        },
+        {
+          "id": 10,
+          "name": "Arlind",
+          "address": "Zija Mersovksi",
+          "email": "test@gmail.com",
+          "phone": "123123"
+        },
+        {
+          "id": 11,
+          "name": "John Doe",
+          "address": "123 Main St",
+          "email": "johndoe@example.com",
+          "phone": "123-456-7890"
         }
       ]
     },
@@ -97,7 +111,7 @@
   ],
   "lastUsedId": {
     "departmentId": 6,
-    "employeeId": 9
+    "employeeId": 11
   },
   "deparments": [
     {

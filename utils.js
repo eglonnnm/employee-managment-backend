@@ -19,7 +19,7 @@ function writeLastUsedDepartmentId(value) {
 
 function readLastUsedEmployeeId() {
   try {
-    const data = router.db.get("lastUsed Id").value();
+    const data = router.db.get("lastUsedId").value();
     return data.employeeId;
   } catch (error) {
     console.log("Error while reading last used employee ID", error);
@@ -30,7 +30,7 @@ function readLastUsedEmployeeId() {
 function writeLastUsedEmployeeId(value) {
   const lastUsedId = router.db.get("lastUsedId").value();
   lastUsedId.employeeId = value;
-  router.db.get("lastUsedId", lastUsedId).write();
+  router.db.set("lastUsedId", lastUsedId).write();
 }
 
 module.exports = {

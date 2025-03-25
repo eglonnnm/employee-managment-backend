@@ -7,7 +7,6 @@ module.exports = function (server) {
   // Endopoint create new employee
 
   server.post("/api/employee/:id", (request, response) => {
-    console.log("Error:", request.params.id);
     const departmentId = parseInt(request.params.id);
     const requestBody = request.body;
     const departmentsData = router.db.get("departments").value();
@@ -40,6 +39,11 @@ module.exports = function (server) {
         lastUsedId.employeeId = employeeIdCounter;
         router.db.set("lastUsedId", lastUsedId).write();
         response.json(departmentsData[index]);
+      } else {
+        return response.status(400).json({
+          error:
+            "Employee ID should not be provided for creation. The server will assign an ID automatically.",
+        });
       }
     }
   });
